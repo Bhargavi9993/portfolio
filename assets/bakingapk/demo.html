@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction(e){
+            if(e.target.value.match()){
+                document.querySelector("p").innerHTML = "Valid Email";
+            }else{
+                document.querySelector("p").innerHTML = "Invalid Valid Email".fontcolor('red').bold;
+
+            }
+        }
+            </script>
+</head>
+<body>
+    <input type="text" onkeyup="myFunction(event)">
+    <p></p>
+</body>
+</html>

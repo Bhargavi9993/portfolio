@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Username Validation</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter username">
+    <button onclick="validateUsername()">Submit</button>
+    <p id="result"></p>
+    <input type="text" id="emailInput" placeholder="Enter email">
+    <button onclick="validateEmail()">Submit</button>
+    <p id="result"></p>
+    <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" oninput="removeInvalidCharacters()">
+    <button onclick="validateMobile()">Submit</button>
+    <script>
+       function removeSpaces() {
+            let inputField = document.getElementById("username");
+            inputField.value = inputField.value.replace(/\s/g, ""); // Remove spaces dynamically
+        }
+        function removeInvalidCharacters() {
+            let inputField = document.getElementById("mobileNumber");
+            inputField.value = inputField.value.replace(/\D/g, "").substring(0, 10); // Remove non-digits and limit to 10 characters
+        }
+
+        function validateUsername() {
+            let username = document.getElementById("username").value;
+            let pattern = /^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/; // Updated Amazon-style username validation
+            let result = document.getElementById("result");
+            if (pattern.test(username)) {
+                result.textContent = "✅ Valid Amazon Username";
+                result.style.color = "green";
+            } else {
+                result.textContent = "❌ Invalid Username. Must be 6-20 characters, start with a letter, and contain only letters, numbers, without allowing spaces _ or -";
+                result.style.color = "red";
+            }}
+        function validateEmail() {
+            let email = document.getElementById("emailInput").value;
+            let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let result = document.getElementById("result");
+            if (pattern.test(email)) {
+                result.textContent = "✅ Valid Amazon Email";
+                result.style.color = "green";
+            }else {
+                result.textContent = "❌ Invalid Email. Please enter a valid email format. And @ symbol is required.";
+                result.style.color = "red";
+            }}
+            function validateMobile() {
+            let mobile = document.getElementById("mobileNumber").value;
+            let pattern = /^[0-9]{10}$/; // Strict 10-digit validation
+            let result = document.getElementById("result");
+            if (pattern.test(mobile)) {
+                result.textContent = "✅ Valid Mobile Number";
+                result.style.color = "green";
+            } else {
+                result.textContent = "❌ Invalid Mobile Number. Must be exactly 10 digits.";
+                result.style.color = "red";
+            }
+        }
+        
+   </script>
+</body>
+</html>

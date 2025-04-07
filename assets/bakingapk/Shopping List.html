@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+    .customnavbar{
+        background-color:red !important
+    }      
+        body {
+            background-image: url("img.jpg");
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .product-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+        h2{    text-align: center;
+          font-size: 2em;
+          margin-bottom: 10px;
+          color: black;
+          font-weight: bold;}
+          
+        .footerbar{
+        list-style-type: none;
+        justify-content: center;
+        bottom: 0%;
+        width: 80%;
+        background-color: black;
+        padding: 5px 0;
+        color:white;      
+        text-align:center;
+        line-height: 1.6em;
+    }
+.footerbar p{
+    margin: 0 10px;
+}
+
+.footerbar a{
+    text-decoration: none;
+    color:white;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm customnavbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src = "logo.jpg" alt = "Baking logo" width = 50px;></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link menu item" aria-current="page" href="index.html"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu item" href="Recipes.html"><b>Recipes</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu item" href="Profile.html"><b>Profile</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu item" href="Help & Support.html"><b>Help Support</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu item" href="Shopping List.html"><b>Shopping List</b></a>
+                <li class="nav-item">
+                    <a class="nav-link menu item" href="login.html"><b>Logout</b></a>
+                  </li>    
+              </li>        
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <h2 class="text-center mb-4">Shopping List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Item Price</th>
+                    <th>Availability</th>
+                    <th>Add Action</th>
+                    <th>Remove Action</th>
+                </tr>
+            </thead>
+            <tbody id="shopping-list">
+                <tr>
+                    <td><img src="item1.jpg" class="product-image" alt="Butter"></td>
+                    <td>Butter</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$2.50</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Butter')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item 2.avif" class="product-image" alt="Milk"></td>
+                    <td>Milk</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$1.50</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Milk')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item3.jpg" class="product-image" alt="Bread"></td>
+                    <td>Bread</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$1.00</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Bread')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item4.jpg" class="product-image" alt="Vanilla Extract"></td>
+                    <td>Vanilla Extract</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$3.00</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Vanilla Extract')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item5.webp" class="product-image" alt="Baking Powder"></td>
+                    <td>Baking Powder</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$2.00</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Baking Powder')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item6.avif" class="product-image" alt="Sugar"></td>
+                    <td>Sugar</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$1.80</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Sugar')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item7.webp" class="product-image" alt="Cocoa Powder"></td>
+                    <td>Cocoa Powder</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$5.80</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Cocoa Powder')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item8.jpg" class="product-image" alt="Flour"></td>
+                    <td>Wheat Flour</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$10.80</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart(' Wheat Flour')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item9.jpg" class="product-image" alt="sourdough starter"></td>
+                    <td>sourdough starter</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$8.90</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('sourdough starter')">Add to Cart</button></td>
+                <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item10.jpg" class="product-image" alt="Eggs"></td>
+                    <td>Eggs</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$1.00</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Eggs')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item11.jpg" class="product-image" alt="Salt"></td>
+                    <td>Salt</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$2.80</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Salt')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove </button></td>
+                </tr>
+                <tr>
+                    <td><img src="item12.jpg" class="product-image" alt="Straw berry"></td>
+                    <td>Strawberry</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$5.80</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Strawberry')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="item13.jpg" class="product-image" alt="Carrots"></td>
+                    <td>Carrots</td>
+                    <td><input type="number" value="1" min="1" class="form-control quantity"></td>
+                    <td>$2.00</td>
+                    <td>In Stock</td>
+                    <td><button class="btn btn-primary" onclick="addToCart('Carrots')">Add to Cart</button></td>
+                    <td><button class ="btn btn-danger" onclick = "removeItem(this)">Remove</button></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <script>
+        function addToCart(productName) {
+            alert(productName + " has been added to the cart!");
+        }
+    
+        function removeItem(button) {
+            const row = button.closest('tr');
+            row.remove()}
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Baking App. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="text-white me-3">Instagram</a>
+                <a href="#" class="text-white me-3">Pinterest</a>
+                <a href="#" class="text-white">YouTube</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

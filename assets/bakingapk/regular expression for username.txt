@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Validation</title>
+</head>
+<body>
+
+    <input type="text" id="username" placeholder="Enter username">
+    <button onclick="validateUsername()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function validateUsername() {
+            let username = document.getElementById("username").value;
+            let pattern = /^[a-zA-Z0-9_-]{3,16}$/; // Change this regex based on needs
+            let result = document.getElementById("result");
+
+            if (pattern.test(username)) {
+                result.textContent = "Valid Username ✅";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Invalid Username ❌";
+                result.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

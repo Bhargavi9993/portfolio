@@ -1,0 +1,40 @@
+*{
+    margin : 0%;
+    padding : 0%
+}
+h1{
+    text-align : center;
+}
+p{
+    text-align: center;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap : 20px;
+}
+.card{
+    border: 1px solid black;
+}
+.card-text{
+    align-items: center;
+   }
+  .cards{
+    margin-left: 40px;
+    margin-top: 20px;;
+  }
+  .card1{
+    margin-top: 20px;
+    margin-left: 40px;
+      }
+      .card2{
+        margin-top: 20px;
+        margin-left: 40px;
+      }
+      footer{
+        color : white;
+        margin-top: 20px;;
+        background-color: black;
+        padding : 10px;
+      }
